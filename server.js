@@ -14,7 +14,11 @@ app.get("/", function (request, response) {
 });
 
 app.post('/upload', upload.single('target'), function (req, res, next) {
-  res.json({size: req.file.size})
+  if(req.file){
+    res.json({size: req.file.size})
+  }else{
+    res.json({"error" : "no file specified"})
+  }
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
