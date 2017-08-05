@@ -1,0 +1,18 @@
+html
+  head
+    title Size Of My File
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css")
+    link(rel="stylesheet" href="style.css")
+  body
+    div(class="wrapper")
+      h1 Upload File To See The Size
+      .row
+        .col.s12.m12
+          form(action="/upload" method="POST" enctype="multipart/form-data")
+            .row
+              .input-field.col.s12.file-field
+                  .btn
+                    span File
+                    input(type="file" name="target")
+              .input-field.col.s12
+                input(type="submit" value="Upload" class="btn")
